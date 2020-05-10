@@ -63,8 +63,31 @@ function FormComponent() {
   }
 
   const handleBlur = (e) => {
-    console.log('onBlur',e.target.name)
+    let er =false
+   if(e.target.name == "email"){
+     if(e.target.value.length == 0 || !validateEmail(values.email)){
+      er =true
+     }
+
+   }else{
+if(e.target.value.length == 0 || e.target.value.length == 0){
+  er =true
+}
+   }
+
+
+
+setErrors({
+  ...errors,
+   [e.target.name]: er
+})
+   
   }
+
+
+
+
+
 
   const sendButtonStatus = () =>{
 
@@ -73,9 +96,17 @@ function FormComponent() {
     return values.email.length == 0 || !validateEmail(values.email) || values.subject.length == 0 || values.message.length == 0;
   }
 
-  const reset = () =>{
+  const reset = (e) =>{
     setValues({ email: "", subject: "", message: "" })
+
+    setErrors({
+     email:false,subject:false,message:false
+    })
   }
+
+
+ 
+
 
   const validateEmail = (email) => {
     const regexp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -92,11 +123,11 @@ function FormComponent() {
           <div className="header">Send New Email</div>
           <form className={classes.root} noValidate autoComplete="off">
 
-            <CssTextField error={errors.email} id="custom-css-standard-input" name="email" label="To:" value={values.email} onChange={handleChange} onBlur={handleBlur}/>
+            <TextField error={errors.email} id="custom-css-standard-input" name="email" label="To:" value={values.email} onChange={handleChange}  onBlur={handleBlur}/>
 
-            <CssTextField error={errors.subject} id="custom-css-standard-input" name="subject" label="Subject:" value={values.subject} onChange={handleChange} />
+            <TextField error={errors.subject} id="custom-css-standard-input" name="subject" label="Subject:" value={values.subject}  onChange={handleChange} onBlur={handleBlur}/>
 
-            <TextField style={{borderBottomColor: 'green'}} valid="sadad" error={errors.message} id="custom-css-standard-input" name="message" label="Message:" value={values.message} onChange={handleChange} />
+            <TextField   error={errors.message} id="custom-css-standard-input" name="message" label="Message:" value={values.message}  onChange={handleChange} onBlur={handleBlur}/>
 
             <div className="loading">
               <CircularProgress disableShrink style={{display: stage != "sending" ? "none" : "block"}} />
