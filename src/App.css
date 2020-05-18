@@ -111,6 +111,7 @@ font-weight: 300;}
 .jss1 > * {
     margin: 8px !important;
     width: 100% !important;
+    height: auto !important;
 }
 button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.resetbutton.MuiButton-containedSecondary {
     margin-left: 172px !important;
@@ -122,5 +123,10 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.resetbutton.MuiButt
 
 contained.resetbutton.MuiButton-containedSecondary {
     margin-left: 180px!important;
+    width: 105px !important;
+}
+
+button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.resetbutton.MuiButton-containedSecondary {
+    margin-left: 172px!important;
     width: 105px !important;
 }
