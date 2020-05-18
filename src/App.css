@@ -100,13 +100,13 @@ font-weight: 300;}
 
 
 .wrap_form {
-    margin-top: 30px;
-    width: 530px;
-    margin: auto;
+    margin-top: 30px !important;
+    width: 530px !important;
+    margin: auto !important;
 }
 .jss1 {
-    padding: 25px;
-  height: auto;
+    padding: 25px !important;
+  height: auto !important;
 }
 .jss1 > * {
     margin: 8px !important;
