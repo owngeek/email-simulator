@@ -106,6 +106,7 @@ font-weight: 300;}
 }
 .jss1 {
     padding: 25px;
+  height: auto;
 }
 .jss1 > * {
     margin: 8px !important;
@@ -113,4 +114,13 @@ font-weight: 300;}
 }
 button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.resetbutton.MuiButton-containedSecondary {
     margin-left: 172px !important;
+}
+.header{margin:0;}
+.MuiButton-contained.Mui-disabled {
+    width: 105px !important;
+}
+
+contained.resetbutton.MuiButton-containedSecondary {
+    margin-left: 180px!important;
+    width: 105px !important;
 }
