@@ -130,3 +130,6 @@ button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.resetbutton.MuiButt
     margin-left: 172px!important;
     width: 105px !important;
 }
+.MuiButton-containedSecondary {
+    width: 105px !important;
+}
